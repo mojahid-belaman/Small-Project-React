@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../UI/Card";
+import Button from "../UI/Button";
 
 function AddUser() {
   const addSubmit = (e) => {
@@ -12,7 +13,7 @@ function AddUser() {
         <input name="username" type="text" className="block mb-2 w-full rounded-sm border focus:border-0 border-gray-300 p-1 outline-none focus:outline-gray-500" />
         <label htmlFor="age" className="block font-bold mb-2">Age (Years)</label>
         <input name="age" type="number" className="block mb-2 w-full rounded-sm border focus:border-0 border-gray-300 p-1 outline-none focus:outline-gray-500 " />
-        <button type="submit">Add User</button>
+        <Button>Add User</Button>
       </form>
     </Card>
   );
