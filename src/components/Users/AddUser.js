@@ -8,8 +8,8 @@ const AddUser = (props) => {
   const [enteredAge, setEnteredAge] = useState("");
   const [error, setError] = useState();
 
-  const clickHandler = () => {
-    setError();
+  const errorHandler = () => {
+    setError(null);
   };
   const changeUsernameHandler = (e) => {
     setEnteredUsername(e.target.value);
@@ -40,7 +40,7 @@ const AddUser = (props) => {
   };
   return (
     <div>
-      {error && <ErrorModal error={error} onHideError={clickHandler} />}
+      {error && <ErrorModal error={error} onConfirm={errorHandler} />}
       <Card className={"conatiner mx-auto my-8 p-4 w-[90%] max-w-2xl"}>
         <form onSubmit={addSubmit}>
           <label htmlFor="username" className="block font-bold mb-2">
