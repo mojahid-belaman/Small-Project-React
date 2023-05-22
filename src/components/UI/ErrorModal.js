@@ -1,10 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
+import reactDOM from "react-dom";
 import Card from "./Card";
 import Button from "./Button";
 
 const ErrorModal = (props) => {
-  return (
-    <div className="fixed top-0 left-0 w-full h-screen z-10 bg-black/75" onClick={props.onConfirm} >
+  return reactDOM.createPortal(
+    <Fragment>
+      <div
+        className="fixed top-0 left-0 w-full h-screen z-10 bg-black/75"
+        onClick={props.onConfirm}
+      />
       <Card
         className={
           "fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-1/4 overflow-hidden"
@@ -22,7 +27,8 @@ const ErrorModal = (props) => {
           <Button onClick={props.onConfirm}>Okay</Button>
         </footer>
       </Card>
-    </div>
+    </Fragment>,
+    document.getElementById("modal")
   );
 };
 
